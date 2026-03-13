@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:hr_system_test/Config/app_environment.dart';
-import 'package:hr_system_test/Models/profile_api_model.dart';
-import 'package:hr_system_test/Services/storage_service.dart';
+import 'package:hr_test/Config/app_environment.dart';
+import 'package:hr_test/Models/profile_api_model.dart';
+import 'package:hr_test/Services/storage_service.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {

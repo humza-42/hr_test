@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:hr_system_test/Screens/LogInPage/login_page.dart';
-import 'package:hr_system_test/Services/storage_service.dart';
-import 'package:hr_system_test/Screens/DashboardPage/dashboardoverview.dart';
+import '../DashboardPage/dashboardoverview.dart';
+import '../LogInPage/login_page.dart';
+import '../../Services/storage_service.dart';
 
 class DashboardPage extends StatefulWidget {
   final VoidCallback? onThemeToggle;

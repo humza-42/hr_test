@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import 'package:hr_system_test/Services/Service_Manager/DashboardService/dashboard_service.dart'
+import 'package:hr_test/Services/Service_Manager/DashboardService/dashboard_service.dart'
     as DashboardService;
 
-import 'package:hr_system_test/Models/dashboard_api_model.dart';
-import 'package:hr_system_test/Services/storage_service.dart';
-import 'package:hr_system_test/Widgets/Daily_attendance_card/daily_attendance_card.dart';
-import 'package:hr_system_test/Widgets/DashBoard_Overview/time_logged_chart.dart';
-import 'package:hr_system_test/Widgets/desktop_container.dart';
+import 'package:hr_test/Models/dashboard_api_model.dart';
+import 'package:hr_test/Services/storage_service.dart';
+import 'package:hr_test/Widgets/Daily_attendance_card/daily_attendance_card.dart';
+import 'package:hr_test/Widgets/DashBoard_Overview/time_logged_chart.dart';
+import 'package:hr_test/Widgets/desktop_container.dart';
 
 class DashboardOverview extends StatefulWidget {
   const DashboardOverview({super.key});

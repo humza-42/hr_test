@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:hr_system_test/Widgets/LogIn_Page/login_form.dart';
+import 'package:hr_test/Widgets/LogIn_Page/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   final VoidCallback? onThemeToggle;

@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:hr_system_test/Models/dashboard_api_model.dart';
-import 'package:hr_system_test/Models/profile_api_model.dart';
+import 'package:hr_test/Models/dashboard_api_model.dart';
+import 'package:hr_test/Models/profile_api_model.dart';
 
-import 'package:hr_system_test/Services/Service_Manager/DashboardService/dashboard_service.dart'
+import 'package:hr_test/Services/Service_Manager/DashboardService/dashboard_service.dart'
     as DashboardService;
-import 'package:hr_system_test/Services/Service_Manager/AttendanceService/clock_in_service.dart'
+import 'package:hr_test/Services/Service_Manager/AttendanceService/clock_in_service.dart'
     as ClockInService;
-import 'package:hr_system_test/Services/Service_Manager/AttendanceService/clock_out_service.dart'
+import 'package:hr_test/Services/Service_Manager/AttendanceService/clock_out_service.dart'
     as ClockOutService;
-import 'package:hr_system_test/Services/Service_Manager/AttendanceService/start_break_service.dart'
+import 'package:hr_test/Services/Service_Manager/AttendanceService/start_break_service.dart'
     as StartBreakService;
-import 'package:hr_system_test/Services/Service_Manager/AttendanceService/break_end_service.dart'
+import 'package:hr_test/Services/Service_Manager/AttendanceService/break_end_service.dart'
     as BreakEndService;
-import 'package:hr_system_test/Services/Service_Manager/AttendanceService/extra_break_service.dart'
+import 'package:hr_test/Services/Service_Manager/AttendanceService/extra_break_service.dart'
     as ExtraBreakService;
-import 'package:hr_system_test/Services/Service_Manager/BreakService/break_types_service.dart'
+import 'package:hr_test/Services/Service_Manager/BreakService/break_types_service.dart'
     as BreakTypesService;
-import 'package:hr_system_test/Services/Service_Manager/ProfileService/profile_service.dart'
+import 'package:hr_test/Services/Service_Manager/ProfileService/profile_service.dart'
     as ProfileService;
-import 'package:hr_system_test/Services/storage_service.dart';
-import 'package:hr_system_test/Widgets/Daily_attendance_card/daily_attendance_card_break_type_button.dart';
-import 'package:hr_system_test/Models/break_types_api_model.dart'
-    as break_types;
+import 'package:hr_test/Services/storage_service.dart';
+import 'package:hr_test/Widgets/Daily_attendance_card/daily_attendance_card_break_type_button.dart';
+import 'package:hr_test/Models/break_types_api_model.dart' as break_types;
 import 'dart:developer' as developer;
 
 class DailyAttendanceCard extends StatefulWidget {
