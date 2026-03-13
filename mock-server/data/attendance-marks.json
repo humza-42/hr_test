@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "attendance_id": 300,
+    "current_status": "Work",
+    "message": "Clock In successful",
+    "ok": true,
+    "type": "clock-in"
+  },
+  {
+    "id": 2,
+    "attendance_id": 300,
+    "current_status": "Work",
+    "message": "Clock Out successful",
+    "ok": true,
+    "type": "clock-out"
+  },
+  {
+    "id": 3,
+    "attendance_id": 300,
+    "current_status": "Break",
+    "message": "Break Start successful",
+    "ok": true,
+    "type": "break-start"
+  },
+  {
+    "id": 4,
+    "attendance_id": 300,
+    "current_status": "Work",
+    "message": "Break End successful",
+    "ok": true,
+    "type": "break-end"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "name": "hr-system-mock-server",
+  "version": "1.0.0",
+  "description": "Mock JSON Server for HR System Flutter App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "json-server",
+    "mock",
+    "api",
+    "hr-system"
+  ],
+  "author": "HR System Team",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

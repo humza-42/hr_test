@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "data": [
+      {
+        "id": 1,
+        "name": "Meeting",
+        "professional": true
+      },
+      {
+        "id": 2,
+        "name": "Official Duty",
+        "professional": true
+      },
+      {
+        "id": 3,
+        "name": "Prayer",
+        "professional": true
+      },
+      {
+        "id": 4,
+        "name": "Lunch",
+        "professional": false
+      },
+      {
+        "id": 5,
+        "name": "Restroom",
+        "professional": true
+      },
+      {
+        "id": 6,
+        "name": "Extra",
+        "professional": false
+      },
+      {
+        "id": 7,
+        "name": "Cleaning Break",
+        "professional": true
+      },
+      {
+        "id": 8,
+        "name": "Maintenance Break",
+        "professional": true
+      },
+      {
+        "id": 9,
+        "name": "Sanitization Break",
+        "professional": true
+      },
+      {
+        "id": 10,
+        "name": "Equipment Setup",
+        "professional": true
+      },
+      {
+        "id": 11,
+        "name": "Inventory Check",
+        "professional": true
+      },
+      {
+        "id": 12,
+        "name": "Area Inspection",
+        "professional": true
+      },
+      {
+        "id": 13,
+        "name": "Documentation",
+        "professional": true
+      },
+      {
+        "id": 14,
+        "name": "Training Session",
+        "professional": true
+      },
+      {
+        "id": 15,
+        "name": "Team Briefing",
+        "professional": true
+      }
+    ],
+    "ok": true
+  }
+]

@@ -1,0 +1,320 @@
+[
+  {
+    "id": 1,
+    "data": {
+      "attendance": {
+        "date": "2026-02-17",
+        "id": 300,
+        "status": "Work"
+      },
+      "break_start_time": false,
+      "check_in": "",
+      "check_out": false,
+      "current_session_time": "2026-02-17T13:24:18+05:00",
+      "current_status": "Work",
+      "holiday_info": null,
+      "last_session_status": 1,
+      "leave_summary": {
+        "taken": 0,
+        "total": 20,
+        "type": {
+          "annual": 0,
+          "casual": 0,
+          "sick": 0,
+          "unpaid": 0
+        }
+      },
+      "monthly_records": [
+        {
+          "attendance_id": null,
+          "date": "2026-02-01",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-02",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-03",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-04",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-05",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-06",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-07",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-08",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-09",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-10",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-11",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": 296,
+          "date": "2026-02-12",
+          "hours": 0.01,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Present"
+        },
+        {
+          "attendance_id": 298,
+          "date": "2026-02-13",
+          "hours": 0.12,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Present"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-14",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-15",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-16",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Weekend"
+        },
+        {
+          "attendance_id": 300,
+          "date": "2026-02-17",
+          "hours": 0.07,
+          "is_future": false,
+          "is_working_day": false,
+          "status": "Present"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-18",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-19",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-20",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-21",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-22",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-23",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-24",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-25",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-26",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-27",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        },
+        {
+          "attendance_id": null,
+          "date": "2026-02-28",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "status": "Future"
+        }
+      ],
+      "on_break": false,
+      "professional_break": 0,
+      "remaining_hours": 28548,
+      "today": "2026-02-17",
+      "total_break_time": 8802000,
+      "weekly_records": [
+        {
+          "date": "02/16",
+          "day": "Mon",
+          "hours": 0,
+          "is_future": false,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/17",
+          "day": "Tue",
+          "formatted_hours": "4m",
+          "hours": 0.07,
+          "is_future": false,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/18",
+          "day": "Wed",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/19",
+          "day": "Thu",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/20",
+          "day": "Fri",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/21",
+          "day": "Sat",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "target": 0.0
+        },
+        {
+          "date": "02/22",
+          "day": "Sun",
+          "hours": 0,
+          "is_future": true,
+          "is_working_day": false,
+          "target": 0.0
+        }
+      ]
+    },
+    "ok": true
+  }
+]
