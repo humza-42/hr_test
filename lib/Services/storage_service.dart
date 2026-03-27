@@ -1,4 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:developer' as developer;
+import 'dart:developer' as developer;
 
 class StorageService {
   // Authentication keys
@@ -20,13 +22,15 @@ class StorageService {
   // Get authentication token
   static Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_tokenKey);
+    final token = prefs.getString(_tokenKey);
+    developer.log('StorageService.getToken: retrieved token: $token');
+    return token != null ? token.trim() : null;
   }
 
   // Set authentication token
   static Future<void> setToken(String token) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_tokenKey, token);
+    await prefs.setString(_tokenKey, token.trim());
   }
 
   // Save token (alias for setToken)

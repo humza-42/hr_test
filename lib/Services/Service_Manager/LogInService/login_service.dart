@@ -19,6 +19,11 @@ class AuthService {
         body: jsonEncode({'email': email, 'password': password}),
       );
 
+      developer.log('Login request URL: $url');
+      developer.log('Login request body: {email: $email, password: ********}');
+      developer.log('Login response status: ${response.statusCode}');
+      developer.log('Login response body: ${response.body}');
+
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData = jsonDecode(response.body);
         final loginResponse = LoginAPI.fromJson(responseData);

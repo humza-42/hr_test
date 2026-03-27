@@ -13,7 +13,7 @@ class AppEnvironment {
 
   /// Set to `true` to use mock backend (JSON Server)
   /// Set to `false` to use live backend (Python server)
-  static const bool useMockBackend = true;
+  static const bool useMockBackend = false;
 
   // ============================================
   // BASE URLS
@@ -24,7 +24,8 @@ class AppEnvironment {
   static const String mockBaseUrl = 'http://localhost:5000/api';
 
   /// Live server URL (Python Backend)
-  static const String liveBaseUrl = 'http://192.168.18.26:5000/api';
+  static const String liveBaseUrl =
+      'https://hrsupport.bitstormsolutions.com/api';
 
   // ============================================
   // ACTIVE CONFIGURATION

@@ -112,21 +112,7 @@ class _AppNavigator extends StatefulWidget {
 class _AppNavigatorState extends State<_AppNavigator> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<bool>(
-      future: StorageService.isLoggedIn(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
-          );
-        }
-
-        if (snapshot.data == true) {
-          return DashboardPage(onThemeToggle: widget.onThemeToggle);
-        } else {
-          return LoginPage(onThemeToggle: widget.onThemeToggle);
-        }
-      },
-    );
+    // Temporarily always go to login to debug the login flow
+    return LoginPage(onThemeToggle: widget.onThemeToggle);
   }
 }

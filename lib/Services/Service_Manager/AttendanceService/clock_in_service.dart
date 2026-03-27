@@ -30,11 +30,7 @@ class AuthService {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode({
-          'user_id': userId,
-          'api_token': token,
-          'action': 'clock_in',
-        }),
+        body: jsonEncode({'user_id': userId, 'action': 'clock_in'}),
       );
 
       if (response.statusCode == 200) {

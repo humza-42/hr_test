@@ -266,6 +266,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   Future<void> _handleSignIn() async {
+    debugPrint('_handleSignIn called');
     // Basic email validation
     final email = _emailController.text.trim();
     if (email.isEmpty) {
@@ -304,6 +305,10 @@ class _LoginFormState extends State<LoginForm> {
     });
 
     try {
+      // Clear any existing token to force fresh login
+      await StorageService.clearAll();
+      debugPrint('Cleared all stored data');
+
       // Call authentication service
       final loginResponse = await AuthService.login(
         email,
@@ -312,27 +317,50 @@ class _LoginFormState extends State<LoginForm> {
 
       // Debug logging
       debugPrint(
-        'Login response - ok: ${loginResponse.ok}, apiToken: ${loginResponse.apiToken}, userId: ${loginResponse.userId}',
+        'Login response - ok: ${loginResponse.ok}, token: ${loginResponse.token}, user: ${loginResponse.user}',
       );
 
-      // Check if login was successful - accept if ok is true OR if we have a token
-      if ((loginResponse.ok == true || loginResponse.apiToken != null) &&
-          loginResponse.apiToken != null) {
-        // Save token
-        await StorageService.saveToken(loginResponse.apiToken!);
-        debugPrint('Token saved: ${loginResponse.apiToken}');
+      // Additional debug for token format
+      if (loginResponse.token != null) {
+        final segments = loginResponse.token!.split('.');
+        debugPrint(
+          'Token segments: ${segments.length} - Token: ${loginResponse.token!}',
+        );
+      }
 
-        // Save user data if available
-        if (loginResponse.name != null &&
-            loginResponse.role != null &&
-            loginResponse.userId != null) {
+      // Check if login was successful - accept only if ok is true and we have a token
+      if (loginResponse.ok == true && loginResponse.token != null) {
+        // Save token
+        await StorageService.saveToken(loginResponse.token!);
+        debugPrint('Token saved: ${loginResponse.token}');
+        // Verify token was saved
+        final verifiedToken = await StorageService.getToken();
+        debugPrint('Verified token in storage: $verifiedToken');
+
+        // Save user data if available - handle both direct fields and user object
+        String? userName = loginResponse.name;
+        String? userRole = loginResponse.role;
+        int? userId = loginResponse.user?.id;
+
+        // If top-level fields are null, try to get them from the user object
+        if (userName == null && loginResponse.user != null) {
+          userName = loginResponse.user!.name;
+        }
+        if (userRole == null && loginResponse.user != null) {
+          userRole = loginResponse.user!.role;
+        }
+        if (userId == null && loginResponse.user != null) {
+          userId = loginResponse.user!.id;
+        }
+
+        if (userName != null && userRole != null && userId != null) {
           await StorageService.saveUserData(
-            name: loginResponse.name!,
-            role: loginResponse.role!,
-            userId: loginResponse.userId!,
+            name: userName,
+            role: userRole,
+            userId: userId,
           );
           debugPrint(
-            'User data saved - name: ${loginResponse.name}, role: ${loginResponse.role}, userId: ${loginResponse.userId}',
+            'User data saved - name: $userName, role: $userRole, userId: $userId',
           );
         }
 

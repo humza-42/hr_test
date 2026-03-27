@@ -106,7 +106,9 @@ class Data {
     lastSessionStatus = json['last_session_status'] != null
         ? (json['last_session_status'] is double
               ? (json['last_session_status'] as double).toInt()
-              : json['last_session_status'] as int?)
+              : (json['last_session_status'] is bool
+                    ? (json['last_session_status'] as bool ? 1 : 0)
+                    : json['last_session_status'] as int?))
         : null;
     leaveSummary = json['leave_summary'] != null
         ? new LeaveSummary.fromJson(json['leave_summary'])
@@ -121,12 +123,16 @@ class Data {
     professionalBreak = json['professional_break'] != null
         ? (json['professional_break'] is double
               ? (json['professional_break'] as double).toInt()
-              : json['professional_break'] as int?)
+              : (json['professional_break'] is bool
+                    ? (json['professional_break'] as bool ? 1 : 0)
+                    : json['professional_break'] as int?))
         : null;
     remainingHours = json['remaining_hours'] != null
         ? (json['remaining_hours'] is double
               ? (json['remaining_hours'] as double).toInt()
-              : json['remaining_hours'] as int?)
+              : (json['remaining_hours'] is bool
+                    ? (json['remaining_hours'] as bool ? 1 : 0)
+                    : json['remaining_hours'] as int?))
         : null;
     // Handle today as either String or bool
     if (json['today'] is bool) {
