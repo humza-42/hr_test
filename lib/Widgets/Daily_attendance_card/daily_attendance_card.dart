@@ -212,30 +212,39 @@ class _DailyAttendanceCardState extends State<DailyAttendanceCard>
         });
       } else if (apiCheckIn && !apiCheckOut) {
         // API confirms user is clocked in but no storage
+        // Try to get clock-in time from API response
+        DateTime? apiClockInTime;
+        if (apiData?.checkIn is String &&
+            apiData?.checkIn != null &&
+            apiData?.checkIn!.isNotEmpty == true) {
+          try {
+            final checkInString = apiData?.checkIn;
+            if (checkInString != null && checkInString.isNotEmpty) {
+              apiClockInTime = DateTime.parse(checkInString).toLocal();
+            }
+          } catch (e) {
+            developer.log(
+              'Failed to parse API checkIn time: $e',
+              name: 'DailyAttendanceCard',
+            );
+          }
+        }
+
         setState(() {
           _optimisticCheckIn = true;
           _optimisticCheckOut = false;
-        });
-      } else if (!apiCheckIn && !apiCheckOut) {
-        // API says user is not clocked in and no storage
-        setState(() {
-          _clockInTime = null;
-          _clockInDate = null;
-          _clockOutTime = null;
-          _clockOutDate = null;
-          _optimisticCheckIn = false;
-          _optimisticCheckOut = false;
-        });
-        // Clear storage
-        StorageService.clearClockInDate();
-        StorageService.clearClockInTime();
-        StorageService.clearClockOutDate();
-        StorageService.clearClockOutTime();
-      } else if (apiCheckOut) {
-        // User has clocked out according to API
-        setState(() {
-          _optimisticCheckIn = false;
-          _optimisticCheckOut = true;
+          // If we got a valid time from API, use it
+          if (apiClockInTime != null) {
+            _clockInTime = apiClockInTime;
+            _clockInDate = DateTime(
+              apiClockInTime.year,
+              apiClockInTime.month,
+              apiClockInTime.day,
+            );
+            // Also save to storage for consistency across app restarts
+            StorageService.saveClockInTime(apiClockInTime);
+            StorageService.saveClockInDate(_clockInDate!);
+          }
         });
       }
     });
