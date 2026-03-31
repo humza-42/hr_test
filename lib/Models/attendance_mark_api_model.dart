@@ -6,8 +6,26 @@ class ClockInAPI {
   ClockInAPI({this.currentStatus, this.message, this.ok});
 
   ClockInAPI.fromJson(Map<String, dynamic> json) {
-    currentStatus = json['current_status'];
-    message = json['message'];
+    // Handle currentStatus as either String or other types
+    if (json['current_status'] is String) {
+      currentStatus = json['current_status'];
+    } else if (json['current_status'] != null) {
+      // Convert non-string values to string
+      currentStatus = json['current_status'].toString();
+    } else {
+      currentStatus = null;
+    }
+
+    // Handle message as either String or other types
+    if (json['message'] is String) {
+      message = json['message'];
+    } else if (json['message'] != null) {
+      // Convert non-string values to string
+      message = json['message'].toString();
+    } else {
+      message = null;
+    }
+
     ok = json['ok'];
   }
 
@@ -28,8 +46,26 @@ class ClockOutAPI {
   ClockOutAPI({this.currentStatus, this.message, this.ok});
 
   ClockOutAPI.fromJson(Map<String, dynamic> json) {
-    currentStatus = json['current_status'];
-    message = json['message'];
+    // Handle currentStatus as either String or other types
+    if (json['current_status'] is String) {
+      currentStatus = json['current_status'];
+    } else if (json['current_status'] != null) {
+      // Convert non-string values to string
+      currentStatus = json['current_status'].toString();
+    } else {
+      currentStatus = null;
+    }
+
+    // Handle message as either String or other types
+    if (json['message'] is String) {
+      message = json['message'];
+    } else if (json['message'] != null) {
+      // Convert non-string values to string
+      message = json['message'].toString();
+    } else {
+      message = null;
+    }
+
     ok = json['ok'];
   }
 
@@ -50,8 +86,26 @@ class StartBreakAPI {
   StartBreakAPI({this.currentStatus, this.message, this.ok});
 
   StartBreakAPI.fromJson(Map<String, dynamic> json) {
-    currentStatus = json['current_status'];
-    message = json['message'];
+    // Handle currentStatus as either String or other types
+    if (json['current_status'] is String) {
+      currentStatus = json['current_status'];
+    } else if (json['current_status'] != null) {
+      // Convert non-string values to string
+      currentStatus = json['current_status'].toString();
+    } else {
+      currentStatus = null;
+    }
+
+    // Handle message as either String or other types
+    if (json['message'] is String) {
+      message = json['message'];
+    } else if (json['message'] != null) {
+      // Convert non-string values to string
+      message = json['message'].toString();
+    } else {
+      message = null;
+    }
+
     ok = json['ok'];
   }
 
@@ -72,8 +126,26 @@ class BreakEndAPI {
   BreakEndAPI({this.currentStatus, this.message, this.ok});
 
   BreakEndAPI.fromJson(Map<String, dynamic> json) {
-    currentStatus = json['current_status'];
-    message = json['message'];
+    // Handle currentStatus as either String or other types
+    if (json['current_status'] is String) {
+      currentStatus = json['current_status'];
+    } else if (json['current_status'] != null) {
+      // Convert non-string values to string
+      currentStatus = json['current_status'].toString();
+    } else {
+      currentStatus = null;
+    }
+
+    // Handle message as either String or other types
+    if (json['message'] is String) {
+      message = json['message'];
+    } else if (json['message'] != null) {
+      // Convert non-string values to string
+      message = json['message'].toString();
+    } else {
+      message = null;
+    }
+
     ok = json['ok'];
   }
 

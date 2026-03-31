@@ -8,10 +8,38 @@ class LoginAPI {
   LoginAPI({this.token, this.name, this.ok, this.role, this.user});
 
   LoginAPI.fromJson(Map<String, dynamic> json) {
-    token = json['token'];
-    name = json['name'];
+    // Handle token as either String or other types
+    if (json['token'] is String) {
+      token = json['token'];
+    } else if (json['token'] != null) {
+      // Convert non-string values to string
+      token = json['token'].toString();
+    } else {
+      token = null;
+    }
+
+    // Handle name as either String or other types
+    if (json['name'] is String) {
+      name = json['name'];
+    } else if (json['name'] != null) {
+      // Convert non-string values to string
+      name = json['name'].toString();
+    } else {
+      name = null;
+    }
+
     ok = json['ok'];
-    role = json['role'];
+
+    // Handle role as either String or other types
+    if (json['role'] is String) {
+      role = json['role'];
+    } else if (json['role'] != null) {
+      // Convert non-string values to string
+      role = json['role'].toString();
+    } else {
+      role = null;
+    }
+
     user = json['user'] != null ? User.fromJson(json['user']) : null;
   }
 

@@ -41,13 +41,76 @@ class Data {
   });
 
   Data.fromJson(Map<String, dynamic> json) {
-    department = json['department'];
-    designation = json['designation'];
-    email = json['email'];
-    gender = json['gender'];
-    name = json['name'];
-    phone = json['phone'];
-    profilePicture = json['profile_picture'];
+    // Handle department as either String or other types
+    if (json['department'] is String) {
+      department = json['department'];
+    } else if (json['department'] != null) {
+      // Convert non-string values to string
+      department = json['department'].toString();
+    } else {
+      department = null;
+    }
+
+    // Handle designation as either String or other types
+    if (json['designation'] is String) {
+      designation = json['designation'];
+    } else if (json['designation'] != null) {
+      // Convert non-string values to string
+      designation = json['designation'].toString();
+    } else {
+      designation = null;
+    }
+
+    // Handle email as either String or other types
+    if (json['email'] is String) {
+      email = json['email'];
+    } else if (json['email'] != null) {
+      // Convert non-string values to string
+      email = json['email'].toString();
+    } else {
+      email = null;
+    }
+
+    // Handle gender as either String or other types
+    if (json['gender'] is String) {
+      gender = json['gender'];
+    } else if (json['gender'] != null) {
+      // Convert non-string values to string
+      gender = json['gender'].toString();
+    } else {
+      gender = null;
+    }
+
+    // Handle name as either String or other types
+    if (json['name'] is String) {
+      name = json['name'];
+    } else if (json['name'] != null) {
+      // Convert non-string values to string
+      name = json['name'].toString();
+    } else {
+      name = null;
+    }
+
+    // Handle phone as either String or other types
+    if (json['phone'] is String) {
+      phone = json['phone'];
+    } else if (json['phone'] != null) {
+      // Convert non-string values to string
+      phone = json['phone'].toString();
+    } else {
+      phone = null;
+    }
+
+    // Handle profilePicture as either String or other types
+    if (json['profile_picture'] is String) {
+      profilePicture = json['profile_picture'];
+    } else if (json['profile_picture'] != null) {
+      // Convert non-string values to string
+      profilePicture = json['profile_picture'].toString();
+    } else {
+      profilePicture = null;
+    }
+
     userId = json['user_id'] != null
         ? (json['user_id'] is double
               ? (json['user_id'] as double).toInt()

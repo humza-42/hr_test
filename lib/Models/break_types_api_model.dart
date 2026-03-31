@@ -37,7 +37,15 @@ class Data {
               ? (json['id'] as double).toInt()
               : json['id'] as int?)
         : null;
-    name = json['name'];
+    // Handle name as either String or other types
+    if (json['name'] is String) {
+      name = json['name'];
+    } else if (json['name'] != null) {
+      // Convert non-string values to string
+      name = json['name'].toString();
+    } else {
+      name = null;
+    }
     professional = json['professional'] is bool
         ? json['professional'] as bool
         : (json['professional'] is String
