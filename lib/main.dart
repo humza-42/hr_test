@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:hr_test/Screens/DashboardPage/dashboard_page.dart';
 import 'package:hr_test/Screens/LogInPage/login_page.dart';
-import 'package:hr_test/Services/storage_service.dart';
 
 void main() {
   runApp(const MyApp());

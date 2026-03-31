@@ -62,34 +62,8 @@ class _DashboardPageState extends State<DashboardPage>
   }
 
   // PageView controller to manage page state
-  final PageController _pageController = PageController();
 
   // Map menu items to page indexes for PageView
-  final Map<String, int> _menuItemToIndex = {
-    'Dashboard': 0,
-    'Attendance': 1,
-    'Break Requests': 2,
-    'Leave': 3,
-    'Tasks': 4,
-    'Analytics': 5,
-    'Time Tracking': 6,
-    'Remaining Hours': 7,
-    'Hall of Fame': 8,
-  };
-
-  void _onMenuItemSelected(String item, {bool shouldCloseDrawer = true}) {
-    setState(() {
-      _selectedMenuItem = item;
-    });
-    if (shouldCloseDrawer) {
-      Navigator.pop(
-        context,
-      ); // Close drawer after selection (tablet/mobile only)
-    }
-    // Jump to the corresponding page in PageView
-    final index = _menuItemToIndex[item] ?? 0;
-    _pageController.jumpToPage(index);
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -393,84 +393,6 @@ class _DashboardOverviewState extends State<DashboardOverview>
         breakTypeName.toLowerCase().contains('extended');
   }
 
-  // Check if break type is lunch break
-  bool _isLunchBreak(String breakTypeName) {
-    return breakTypeName.toLowerCase().contains('lunch');
-  }
-
-  void _previousMonth() {
-    setState(() {
-      _currentMonth = DateTime(_currentMonth.year, _currentMonth.month - 1, 1);
-    });
-  }
-
-  bool _canNavigateToNextMonth() {
-    final now = DateTime.now();
-    final nextMonth = DateTime(_currentMonth.year, _currentMonth.month + 1, 1);
-    final currentMonthStart = DateTime(now.year, now.month, 1);
-
-    // Only allow navigation if next month is not in the future
-    return nextMonth.isBefore(currentMonthStart) ||
-        nextMonth.isAtSameMomentAs(currentMonthStart);
-  }
-
-  void _nextMonth() {
-    if (_canNavigateToNextMonth()) {
-      setState(() {
-        _currentMonth = DateTime(
-          _currentMonth.year,
-          _currentMonth.month + 1,
-          1,
-        );
-      });
-    }
-  }
-
-  String _getMonthYearString() {
-    final months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
-    return '${months[_currentMonth.month - 1]} ${_currentMonth.year}';
-  }
-
-  /// Extracts day number from date string
-  /// Handles formats like "YYYY-MM-DD", "YYYY/MM/DD", etc.
-  int? _extractDayFromDate(String dateString) {
-    try {
-      // Handle different date formats: "YYYY-MM-DD", "YYYY/MM/DD", etc.
-      final parts = dateString.split(RegExp(r'[-/]'));
-      if (parts.length >= 3) {
-        return int.tryParse(parts[2]); // Day is typically the third part
-      }
-      // Try parsing as DateTime and extracting day
-      final date = DateTime.tryParse(dateString);
-      if (date != null) {
-        return date.day;
-      }
-      return null;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  /// Formats decimal hours to HH:MM format (e.g., 6.83 -> "6:50")
-  String _formatHours(double hours) {
-    final wholeHours = hours.floor();
-    final minutes = ((hours - wholeHours) * 60).round();
-    return '$wholeHours:${minutes.toString().padLeft(2, '0')}';
-  }
-
   @override
   Widget build(BuildContext context) {
     super.build(context); // Required for AutomaticKeepAliveClientMixin
@@ -693,33 +615,6 @@ class _DashboardOverviewState extends State<DashboardOverview>
       remainingHours: remainingHours,
       progress: progress,
     );
-  }
-
-  String _formatMinutesToDuration(int minutes) {
-    final hours = minutes ~/ 60;
-    final mins = minutes % 60;
-    final seconds = 0;
-    return '${hours.toString().padLeft(2, '0')}:${mins.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
-  }
-
-  String _formatTime(String? timeString) {
-    if (timeString == null || timeString.isEmpty) {
-      return '00:00:00';
-    }
-
-    try {
-      // Try to parse ISO 8601 format (e.g., "2026-01-06T13:04:02+05:00")
-      final dateTime = DateTime.parse(timeString);
-      // Format to HH:mm:ss
-      return '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}:${dateTime.second.toString().padLeft(2, '0')}';
-    } catch (e) {
-      // If parsing fails, check if it's already in HH:mm:ss format
-      if (timeString.contains(':') && !timeString.contains('T')) {
-        return timeString;
-      }
-      // Return default if format is unknown
-      return '00:00:00';
-    }
   }
 
   String _formatTime12Hour(DateTime dateTime, {bool includeSeconds = false}) {
